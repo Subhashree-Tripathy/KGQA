@@ -92,14 +92,14 @@ lang_dict = {
     "Marathi": "mr",
 }
 
-
+#predict category of the text
 def PredictText(query):
     # print("queryyyy",query)
     predict = model.predict_text(query)
     # print("predict",predict)
     return predict
 
-
+#translate the text to English if input text is in any other language
 def translate_query(query, src_lang):
     url = "https://revapi.reverieinc.com/translate"
 
@@ -157,9 +157,9 @@ def get_prod_info(prod_id_list):
 f = open("./fashDict.json", "r")
 fash_data = jsonn.load(f)
 
-
+# Converts misspelled words to the correct words
 def process_query_v3(query):
-    begin = time.time()
+   # begin = time.time()
     d = {}
     (
         string,
@@ -262,7 +262,7 @@ def process_query_v3(query):
             string = string.replace(_usage_, " " + max_key7)
         except:
             logger.error("No matches for usage")
-    end = time.time()
+    #end = time.time()
     #     print(f"Total runtime of the program in process_query_v3 is {end - begin}")
     return string
 
@@ -502,6 +502,7 @@ class KGProdSearch:
         #         print(f"Total runtime of the program in get_products is {end - begin}")
         return pred_prod_ids
 
+# get product ids using graph based search 
     def get_prods_from_sparql(self, question, top_k):
         #         begin = time.time()
         query = []
