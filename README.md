@@ -18,7 +18,7 @@ When you search for a product, it first checks the language, if the query is in 
 
 It also handles mispelled words if present in the query text.
 
-# docker build
+# Docker build
 
 sh run_docker.sh
 
