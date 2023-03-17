@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  server:
+    image: reveriegen.azurecr.io/kgqa:0.0.1
+    command: python prodsearchdemo_v6.py
+    ports:
+      - "8081:8081"
+    # env_file:
+    #   - .env
+    depends_on:
+      - graph_db
+    # volumes:
+    #   - .:/usr/src/app
+
+  graph_db:
+    image: ontotext/graphdb:10.2.0
+    
+
+volumes:
+  postgres_data_dev:

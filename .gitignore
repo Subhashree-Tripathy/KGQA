@@ -1,0 +1,9 @@
+venv
+*.pyc
+*.pt
+*.bin
+images
+*.log
+*.chkpt
+*.zip
+.ipynb_checkpoints/
